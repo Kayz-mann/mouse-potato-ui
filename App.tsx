@@ -1,12 +1,37 @@
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import {ThemeProvider} from '@shopify/restyle';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Navigation from './src/navigation';
+import AppLoading from 'expo-app-loading';
+
+import { fetchFonts } from './fontSettings';
+import theme from './src/components/Theme';
+
+
+
 
 export default function App() {
+  
+  const [loading, setLoading] = useState<boolean>(false);
+  if (!loading) {
+    return (
+      <AppLoading
+        startAsync={fetchFonts}
+        onFinish={() => setLoading(true)}
+        onError={console.warn}
+      />
+    )
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider theme={theme}>
+      <SafeAreaProvider>
+        <Navigation />
+        <StatusBar style="auto" />
+      </SafeAreaProvider>
+    </ThemeProvider>
   );
 }
 
