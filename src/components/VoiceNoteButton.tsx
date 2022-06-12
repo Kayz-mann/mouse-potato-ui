@@ -1,27 +1,12 @@
 import React, { FC } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import MicIcon from '../../svg/MicIcon';
 
-import theme, { Box, Text } from './Theme';
+import MicIcon from '../../svg/MicIcon';
+import { Box } from './Theme';
 
 interface Props {
-//   onPress: () => void;
   onLongPress: () => void;
 }
-
-const VoiceNoteButton: FC<Props> = ({ onLongPress }) => {
-  return (
-    <TouchableOpacity
-      activeOpacity={0.7}
-      style={styles.touch}
-      onLongPress={onLongPress}
-    >
-      <Box style={styles.button}>
-        <MicIcon />
-      </Box>
-    </TouchableOpacity>
-  );
-};
 
 const styles = StyleSheet.create({
   touch: {
@@ -43,5 +28,21 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
 });
+
+const VoiceNoteButton: FC<Props> = ({ onLongPress }) => {
+  return (
+    <TouchableOpacity
+      activeOpacity={0.7}
+      style={styles.touch}
+      onLongPress={onLongPress}
+    >
+      <Box style={styles.button}>
+        <MicIcon />
+      </Box>
+    </TouchableOpacity>
+  );
+};
+
+
 
 export default VoiceNoteButton;

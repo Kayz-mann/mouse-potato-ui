@@ -1,4 +1,4 @@
-// export type RootStackParamList = {
-//     BottomTabNav: undefined;
-// };
+export type RootStackParamList = {
+    BottomTabNav: undefined;
+};
   

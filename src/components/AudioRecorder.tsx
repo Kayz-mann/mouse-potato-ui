@@ -3,13 +3,11 @@ import React, { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { Audio } from 'expo-av';
 
-interface Props {
-
-}
 
 
 
-export const AudioRecorder: React.FC<Props> = () => {
+
+export const AudioRecorder: React.FC = () => {
   const [recording, setRecording] = useState<any>();
   const [recordings, setRecordings] = useState([]);
   const [message, setMessage] = useState<string>("");

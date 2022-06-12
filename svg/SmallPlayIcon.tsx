@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Svg, { Path, SvgProps } from 'react-native-svg';
+import Svg, { Path } from 'react-native-svg';
 
-function SmallPlayIcon(props: SvgProps): JSX.Element {
+function SmallPlayIcon(): JSX.Element {
   return (
     <Svg width={28} height={28} fill="none">
       <Path

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Svg, { Path, SvgProps } from 'react-native-svg';
+import Svg, { Path } from 'react-native-svg';
 
-function CommentIcon(props: SvgProps): JSX.Element {
+function CommentIcon(): JSX.Element {
   return (
     <Svg width={20} height={20} fill="none">
       <Path

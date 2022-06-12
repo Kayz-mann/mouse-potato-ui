@@ -8,6 +8,8 @@ import AppLoading from 'expo-app-loading';
 
 import { fetchFonts } from './fontSettings';
 import theme from './src/components/Theme';
+import store from './src/redux/store';
+import { Provider } from 'react-redux';
 
 
 
@@ -26,12 +28,14 @@ export default function App() {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <SafeAreaProvider>
-        <Navigation />
-        <StatusBar style="auto" />
-      </SafeAreaProvider>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+         <SafeAreaProvider>
+           <Navigation />
+           <StatusBar style="auto" />
+         </SafeAreaProvider>
+      </ThemeProvider>
+    </Provider>
   );
 }
 

@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     },
   });
 
-const ListEmpty: React.FC = () => {
+const ListEmpty = () => {
     return <Box style={styles.container}>
       <Text>Please wait while feeds are loading...</Text>
   </Box>;

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Image, TouchableWithoutFeedback, StyleSheet, TouchableOpacity } from 'react-native';
 import {
-    heightPercentageToDP as hp,
     widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 
@@ -16,20 +15,20 @@ import PauseIcon from '../../svg/PauseIcon';
 
 
 interface Props {
-    avatar?: any;
+    avatar?: undefined;
     username: string;
     tagName: string;
     timestamp: string;
     posts?: string;
     timer?: string;
-    likes: number;
+    // likes: number;
     comments: string;
     selected?: boolean;
     duration: string;
 }
 
 
-const FeedCard: React.FC<Props> = ({ timer, avatar, username, tagName, timestamp, posts, likes, comments, duration }) => {
+const FeedCard: React.FC<Props> = ({ timer, avatar, username, tagName, timestamp, posts, comments, duration }) => {
     const [isSaved, setIsSaved] = useState<boolean>(false);
     const [isLiked, setIsLiked] = useState<boolean>(false);
     const [likeCount, setLikeCount] = useState<number>(999);

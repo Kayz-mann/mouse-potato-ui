@@ -1,5 +1,5 @@
-import { createTheme, createText, createBox, spacing } from '@shopify/restyle';
-
+import { createTheme, createText, createBox } from '@shopify/restyle';
+import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
 
 const theme = createTheme({
@@ -44,7 +44,10 @@ const theme = createTheme({
                 // We can define defaults for the variant here.
                 // This will be applied after the defaults passed to createVariant and before the variant defined below.
             },
-       },
+    },
+    layout: {
+        screenWidth: wp(90),
+      },
 
     spacing: {
         xs: 2.5,

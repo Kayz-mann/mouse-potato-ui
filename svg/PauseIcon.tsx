@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Svg, { Path, SvgProps } from 'react-native-svg';
+import Svg, { Path } from 'react-native-svg';
 
-function PauseIcon(props: SvgProps): JSX.Element {
+function PauseIcon(): JSX.Element {
   return (
     <Svg width={40} height={40} fill="none">
       <Path
